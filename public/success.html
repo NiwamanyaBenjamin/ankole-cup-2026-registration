@@ -1,1 +1,37 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Success</title><link rel="stylesheet" href="style.css"></head><body class="login-page"><div class="login-card"><img class="login-logo" src="ankole-logo.png" alt="Ankole Cup logo"><h2>Registration Submitted</h2><p>Your Ankole Cup 2026 player registration has been received successfully.</p><p id="reg"></p><a id="pdf" class="button-link" href="#">Download Submitted PDF</a><a class="button-link secondary" href="/">Register Another Player</a></div><script>const r=new URLSearchParams(location.search).get('reg'); document.getElementById('reg').textContent='Registration No: '+r; document.getElementById('pdf').href='/players/'+encodeURIComponent(r)+'/pdf';</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Submitted - Ankole Cup 2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="success-page">
+  <main class="success-wrap">
+    <section class="success-card">
+      <div class="success-mark">
+        <img src="ankole-logo.png" alt="Ankole Cup logo">
+      </div>
+      <span class="eyebrow">Submission Received</span>
+      <h1>Registration submitted successfully</h1>
+      <p class="success-text">The player registration has been received by the Ankole Cup 2026 Competitions Department and is now pending official review.</p>
+      <div class="reg-box">
+        <small>Registration Number</small>
+        <strong id="reg">AC2026-</strong>
+      </div>
+      <div class="approval-notice">
+        <strong>PDF access is controlled.</strong>
+        <span>The submitted form can only be downloaded from the Competition Portal after approval by the district officer or main admin.</span>
+      </div>
+      <div class="success-actions">
+        <a class="btn btn-gold" href="admin-login.html">Open Competition Portal</a>
+        <a class="btn btn-secondary" href="/">Register Another Player</a>
+      </div>
+    </section>
+  </main>
+  <script>
+    const r = new URLSearchParams(location.search).get('reg') || '';
+    document.getElementById('reg').textContent = r || 'Registration submitted';
+  </script>
+</body>
+</html>
