@@ -1,0 +1,11 @@
+node_modules/
+public/uploads/
+backups/
+logs/
+*.db
+*.db-wal
+*.db-shm
+sessions.sqlite
+.env
+.DS_Store
+npm-debug.log*
