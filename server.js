@@ -234,11 +234,13 @@ async function drawIdCard(row,res){
 app.get('/players/:regNo/pdf', requireLogin, (req,res)=>db.get('SELECT * FROM players WHERE registration_no=?',[req.params.regNo], async (err,row)=>{
   if(!row) return res.status(404).send('Registration not found');
   if(!canAccessPlayer(req,row)) return res.status(403).send('You are not allowed to access this district registration.');
+  if(row.status !== 'Approved') return res.status(403).send('This registration form can only be downloaded after official approval.');
   await drawPdf(row,res);
 }));
 app.get('/players/:regNo/id-card', requireLogin, (req,res)=>db.get('SELECT * FROM players WHERE registration_no=?',[req.params.regNo], async (err,row)=>{
   if(!row) return res.status(404).send('Registration not found');
   if(!canAccessPlayer(req,row)) return res.status(403).send('You are not allowed to access this district registration.');
+  if(row.status !== 'Approved') return res.status(403).send('This player ID card can only be downloaded after official approval.');
   await drawIdCard(row,res);
 }));
 app.get('/verify/:regNo', (req,res)=>db.get('SELECT registration_no,player_code,player_name,district,club,status FROM players WHERE registration_no=?',[req.params.regNo], (err,row)=> row?res.json(row):res.status(404).json({error:'Not found'})));
