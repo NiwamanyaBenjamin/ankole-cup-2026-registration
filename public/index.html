@@ -12,13 +12,52 @@
     <img class="site-logo" src="ankole-logo.png" alt="Ankole Cup logo">
     <div>
       <h1>ANKOLE CUP 2026</h1>
-      <p>Competitions Department - Official Online Player Registration</p>
+      <p>Competitions Department</p>
     </div>
   </div>
-  <a class="admin-link" href="admin-login.html">System Login</a>
+  <a class="admin-link" href="admin-login.html">Competition Portal</a>
 </header>
 
-<main class="paper official-paper">
+<section class="landing-hero compact-hero">
+  <div class="hero-brand-panel">
+    <img class="hero-logo" src="ankole-logo.png" alt="Ankole Cup logo">
+    <span class="eyebrow">Official Player Registration</span>
+    <h2>Ankole Cup 2026 Player Registration</h2>
+    <p>Complete player details, district eligibility, National ID scans, and official declarations through the competition registration portal.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#registrationForm">Start Registration</a>
+      <a class="btn btn-secondary" href="admin-login.html">Competition Portal</a>
+    </div>
+  </div>
+  <div class="hero-summary-card">
+    <div class="summary-icon">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7l19 8v15c0 13-7.5 22-19 27-11.5-5-19-14-19-27V15l19-8z"/><path d="M23 33l6 6 13-16"/></svg>
+    </div>
+    <h3>Registration Review Process</h3>
+    <ul>
+      <li>Submit player information and supporting scans.</li>
+      <li>District officer or admin reviews the registration.</li>
+      <li>PDF download is available only after approval.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="process-strip compact-process">
+  <div class="process-card">
+    <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24"/><path d="M22 33l7 7 14-17"/></svg>
+    <strong>Player Details</strong><span>Names, district, club and category.</span>
+  </div>
+  <div class="process-card">
+    <svg viewBox="0 0 64 64"><rect x="14" y="12" width="36" height="40" rx="6"/><path d="M22 26h20M22 36h14"/></svg>
+    <strong>ID Scan</strong><span>Front and back National ID camera scans.</span>
+  </div>
+  <div class="process-card">
+    <svg viewBox="0 0 64 64"><path d="M32 8l20 8v15c0 13-8 22-20 27-12-5-20-14-20-27V16l20-8z"/><path d="M24 32l6 6 12-14"/></svg>
+    <strong>Approval</strong><span>Official PDF opens after approval.</span>
+  </div>
+</section>
+
+<main id="registrationForm" class="paper official-paper">
   <div class="form-title">
     <img class="form-logo" src="ankole-logo.png" alt="Ankole Cup logo">
     <h2>PLAYER REGISTRATION FORM</h2>
@@ -63,10 +102,11 @@
     <section class="form-step" data-step="2">
       <h3>Section C: Required Attachments</h3>
       <div class="grid upload-grid">
-        <label>* Player Photo:<input type="file" name="photo" accept="image/*" capture="environment" required><small>Clear passport-style or face photo.</small></label>
-        <label>* National ID Front:<input type="file" name="national_id_front_photo" accept="image/*" capture="environment" required><small>Capture or upload the front side.</small></label>
-        <label>* National ID Back:<input type="file" name="national_id_back_photo" accept="image/*" capture="environment" required><small>Capture or upload the back side.</small></label>
+        <label>* Player Photo:<input type="file" name="photo" accept="image/*" required><small>Upload a clear player picture from gallery or camera.</small></label>
+        <label>* National ID Front Scan:<input type="file" name="national_id_front_photo" accept="image/*" capture="environment" required><small>Use camera scan. Capture the front side clearly.</small></label>
+        <label>* National ID Back Scan:<input type="file" name="national_id_back_photo" accept="image/*" capture="environment" required><small>Use camera scan. Capture the back side clearly.</small></label>
       </div>
+      <div class="scan-warning">National ID attachments should be captured directly using the device camera for clear verification.</div>
     </section>
 
     <section class="form-step" data-step="3">
@@ -131,7 +171,7 @@ function showStep(index){
   prevBtn.style.display = currentStep === 0 ? 'none' : 'inline-flex';
   nextBtn.style.display = currentStep === steps.length - 1 ? 'none' : 'inline-flex';
   submitBtn.style.display = currentStep === steps.length - 1 ? 'inline-flex' : 'none';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('registrationForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function validateCurrentStep(){
