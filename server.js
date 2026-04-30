@@ -10,6 +10,8 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
+function strongPassword(p){ return typeof p === 'string' && p.length >= 8 && /[A-Z]/.test(p) && /[a-z]/.test(p) && /[0-9]/.test(p); }
+function validUsername(u){ return /^[a-zA-Z0-9_.-]{4,30}$/.test(String(u||'')); }
 const PORT = process.env.PORT || 3000;
 const DB_PATH = path.join(__dirname, 'ankole_cup.db');
 const uploadDir = path.join(__dirname, 'public/uploads');
@@ -163,7 +165,8 @@ app.post('/api/players/:id/status', requireLogin, (req,res)=>{
 app.get('/api/users', requireLogin, requireAdmin, (req,res)=>db.all('SELECT id,username,role,district,full_name,created_at FROM users ORDER BY role, district, username', [], (e,rows)=>res.json(rows||[])));
 app.post('/api/users', requireLogin, requireAdmin, (req,res)=>{
   const { username, password, role, district, full_name } = req.body;
-  if(!username || !password || password.length < 6) return res.status(400).json({error:'Username and password of at least 6 characters are required.'});
+  if(!validUsername(username)) return res.status(400).json({error:'Username must be 4-30 characters and may contain letters, numbers, dots, dashes or underscores.'});
+  if(!strongPassword(password)) return res.status(400).json({error:'Password must be at least 8 characters and include uppercase, lowercase and a number.'});
   if(!['admin','district_officer'].includes(role)) return res.status(400).json({error:'Invalid role.'});
   if(role==='district_officer' && !DISTRICTS.includes(district)) return res.status(400).json({error:'Select a valid district.'});
   db.run('INSERT INTO users(username,password_hash,role,district,full_name) VALUES(?,?,?,?,?)', [username, bcrypt.hashSync(password,10), role, role==='admin'?null:district, full_name || username], function(err){
@@ -177,7 +180,7 @@ app.delete('/api/users/:id', requireLogin, requireAdmin, (req,res)=>{
 });
 app.post('/change-password', requireLogin, (req,res)=>{
   const { current_password, new_password } = req.body;
-  if(!new_password || new_password.length < 6) return res.status(400).send('New password must be at least 6 characters.');
+  if(!strongPassword(new_password)) return res.status(400).send('New password must be at least 8 characters and include uppercase, lowercase and a number.');
   db.get('SELECT * FROM users WHERE id=?', [req.session.userId], (err,user)=>{
     if(!user || !bcrypt.compareSync(current_password, user.password_hash)) return res.status(400).send('Current password is incorrect.');
     db.run('UPDATE users SET password_hash=?, updated_at=CURRENT_TIMESTAMP WHERE id=?', [bcrypt.hashSync(new_password,10), req.session.userId], ()=>res.redirect('/admin.html?password=changed'));
