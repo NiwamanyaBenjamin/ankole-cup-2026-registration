@@ -3,227 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ankole Cup 2026 Player Registration</title>
+  <title>Ankole Cup 2026</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar official-header">
-  <div class="brand">
-    <img class="site-logo" src="ankole-logo.png" alt="Ankole Cup logo">
-    <div>
-      <h1>ANKOLE CUP 2026</h1>
-      <p>Competitions Department</p>
-    </div>
-  </div>
-  <a class="admin-link" href="admin-login.html">Competition Portal</a>
+<header class="nav">
+  <a class="brand-flat" href="#home"><img src="ankole-logo.png" alt="Ankole Cup logo"><span>Ankole Cup 2026</span></a>
+  <nav>
+    <a href="#about">About</a><a href="#openings">Openings</a><a href="#registrationForm">Register</a><a href="admin-login.html">Portal</a>
+  </nav>
 </header>
 
-<section class="landing-hero compact-hero">
-  <div class="hero-brand-panel">
-    <img class="hero-logo" src="ankole-logo.png" alt="Ankole Cup logo">
-    <span class="eyebrow">Official Player Registration</span>
-    <h2>Ankole Cup 2026 Player Registration</h2>
-    <p>Complete player details, district eligibility, National ID scans, and official declarations through the competition registration portal.</p>
-    <div class="hero-actions">
-      <a class="btn btn-gold" href="#registrationForm">Start Registration</a>
-      <a class="btn btn-secondary" href="admin-login.html">Competition Portal</a>
-    </div>
+<section id="home" class="home-hero">
+  <div class="hero-copy">
+    <span class="tag">Official competitions portal</span>
+    <h1>Player registration for Ankole Cup 2026.</h1>
+    <p>Submit player details, district eligibility, club information and National ID scans for official review.</p>
+    <div class="hero-actions"><a class="btn btn-gold" href="#registrationForm">Start Registration</a><a class="btn btn-outline" href="admin-login.html">Competition Portal</a></div>
   </div>
-  <div class="hero-summary-card">
-    <div class="summary-icon">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 7l19 8v15c0 13-7.5 22-19 27-11.5-5-19-14-19-27V15l19-8z"/><path d="M23 33l6 6 13-16"/></svg>
-    </div>
-    <h3>Registration Review Process</h3>
-    <ul>
-      <li>Submit player information and supporting scans.</li>
-      <li>District officer or admin reviews the registration.</li>
-      <li>PDF download is available only after approval.</li>
-    </ul>
+  <div class="brand-card">
+    <img src="ankole-logo.png" alt="Ankole Cup logo">
+    <h2>ANKOLE CUP</h2>
+    <p>Competitions Department</p>
   </div>
 </section>
 
-<section class="process-strip compact-process">
-  <div class="process-card">
-    <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24"/><path d="M22 33l7 7 14-17"/></svg>
-    <strong>Player Details</strong><span>Names, district, club and category.</span>
-  </div>
-  <div class="process-card">
-    <svg viewBox="0 0 64 64"><rect x="14" y="12" width="36" height="40" rx="6"/><path d="M22 26h20M22 36h14"/></svg>
-    <strong>ID Scan</strong><span>Front and back National ID camera scans.</span>
-  </div>
-  <div class="process-card">
-    <svg viewBox="0 0 64 64"><path d="M32 8l20 8v15c0 13-8 22-20 27-12-5-20-14-20-27V16l20-8z"/><path d="M24 32l6 6 12-14"/></svg>
-    <strong>Approval</strong><span>Official PDF opens after approval.</span>
+<section id="about" class="site-section two-col">
+  <div><h2>Official registration process</h2><p>Each submission is checked by the district officer or the main competition admin before official documents can be downloaded.</p></div>
+  <div class="steps-flat"><div><b>1</b><span>Submit player details</span></div><div><b>2</b><span>Scan National ID front and back</span></div><div><b>3</b><span>Await district/admin approval</span></div></div>
+</section>
+
+<section id="openings" class="site-section openings">
+  <div class="section-head"><h2>Openings</h2><p>Current competition registration openings.</p></div>
+  <div class="opening-grid">
+    <article><h3>Player Registration</h3><p>Open for district team submissions.</p><span id="deadlineCard">Deadline: To be announced</span></article>
+    <article><h3>District Officer Review</h3><p>District officers can review and approve records for their assigned districts.</p><span>Access: Competition Portal</span></article>
+    <article><h3>Document Access</h3><p>PDF forms and player ID cards are available only after approval.</p><span>Status: Approval controlled</span></article>
   </div>
 </section>
 
 <main id="registrationForm" class="paper official-paper">
-  <div class="form-title">
-    <img class="form-logo" src="ankole-logo.png" alt="Ankole Cup logo">
-    <h2>PLAYER REGISTRATION FORM</h2>
-    <p>For this registration to be processed, all required fields must be filled.</p>
-    <p id="deadlineNotice" class="deadline"></p>
-  </div>
-
-  <div class="step-shell">
-    <div class="step-progress" aria-label="Registration steps">
-      <div class="step-item active" data-step-indicator="0"><span>1</span><strong>Player</strong></div>
-      <div class="step-line"></div>
-      <div class="step-item" data-step-indicator="1"><span>2</span><strong>Eligibility</strong></div>
-      <div class="step-line"></div>
-      <div class="step-item" data-step-indicator="2"><span>3</span><strong>Attachments</strong></div>
-      <div class="step-line"></div>
-      <div class="step-item" data-step-indicator="3"><span>4</span><strong>Declaration</strong></div>
-    </div>
-  </div>
+  <div class="form-title flat-title"><img class="form-logo" src="ankole-logo.png" alt="Ankole Cup logo"><h2>PLAYER REGISTRATION FORM</h2><p>All required fields must be completed.</p><p id="deadlineNotice" class="deadline"></p></div>
+  <div class="step-shell"><div class="step-progress"><div class="step-item active" data-step-indicator="0"><span>1</span><strong>Player</strong></div><div class="step-line"></div><div class="step-item" data-step-indicator="1"><span>2</span><strong>Eligibility</strong></div><div class="step-line"></div><div class="step-item" data-step-indicator="2"><span>3</span><strong>Attachments</strong></div><div class="step-line"></div><div class="step-item" data-step-indicator="3"><span>4</span><strong>Declaration</strong></div></div></div>
 
   <form class="official-form multi-step-form" action="/register" method="POST" enctype="multipart/form-data">
-    <section class="form-step active" data-step="0">
-      <h3>Section A: Player Details</h3>
-      <div class="grid">
-        <label>* Player Name:<input name="player_name" placeholder="Enter full name" required></label>
-        <label>Date of Birth:<input name="dob" type="date"></label>
-        <label>* District:<select id="district" name="district" required><option value="">Select district</option></select></label>
-        <label>* Home Area / Sub-county:<select id="home_area_select"><option value="">Select district first</option></select><input id="home_area_custom" placeholder="Or type village/home area if missing"></label>
-        <label>* Club:<input name="club" placeholder="Current club/team" required></label>
-        <label>* Category:<select name="player_type" required><option value="">Select category</option><option>Home Boy (Enzaarwa)</option><option>Foreign Player (Outside Ankole)</option></select></label>
-        <label>* National ID Number (NIN):<input name="nin" id="nin" maxlength="14" minlength="14" pattern="[A-Z]{2}[A-Z0-9]{12}" placeholder="Example: CM03061108ATZJ" required><small>Strict 14-character NIN format is required.</small></label>
-        <label>Phone Number:<input name="phone" placeholder="07XXXXXXXX"></label>
-      </div>
-      <input type="hidden" name="home_area" id="home_area" required>
-    </section>
-
-    <section class="form-step" data-step="1">
-      <h3>Section B: Eligibility and Player History</h3>
-      <label>Please list at least two clubs the player has played for:<textarea name="previous_clubs" placeholder="Example: Club A, Club B"></textarea></label>
-      <label>Eligibility as a Home Boy:<textarea name="eligibility" placeholder="State village/sub-county, parentage, school, or community eligibility details"></textarea></label>
-    </section>
-
-    <section class="form-step" data-step="2">
-      <h3>Section C: Required Attachments</h3>
-      <div class="grid upload-grid">
-        <label>* Player Photo:<input type="file" name="photo" accept="image/*" required><small>Upload a clear player picture from gallery or camera.</small></label>
-        <label>* National ID Front Scan:<input type="file" name="national_id_front_photo" accept="image/*" capture="environment" required><small>Use camera scan. Capture the front side clearly.</small></label>
-        <label>* National ID Back Scan:<input type="file" name="national_id_back_photo" accept="image/*" capture="environment" required><small>Use camera scan. Capture the back side clearly.</small></label>
-      </div>
-      <div class="scan-warning">National ID attachments should be captured directly using the device camera for clear verification.</div>
-    </section>
-
-    <section class="form-step" data-step="3">
-      <h3>Section D: Declaration</h3>
-      <div class="declaration">By signing this form, I declare that the information provided is correct to the best of my knowledge and further declare that I shall abide by all Ankole Cup 2026 directives, regulations and decisions.</div>
-      <div class="grid">
-        <label>* Player Specimen Signature:<input name="player_signature" required></label>
-        <label>District / Team Official Name:<input name="official_name"></label>
-        <label>District / Team Official Signature:<input name="official_signature"></label>
-      </div>
-      <div class="review-note">Please confirm all details before submitting the registration.</div>
-    </section>
-
-    <div class="form-navigation">
-      <button type="button" class="btn btn-secondary" id="prevStep">Back</button>
-      <button type="button" class="btn" id="nextStep">Save and Continue</button>
-      <button type="submit" class="btn btn-gold" id="submitRegistration">Submit Official Registration</button>
-    </div>
+    <section class="form-step active" data-step="0"><h3>Section A: Player Details</h3><div class="grid"><label>* Player Name<input name="player_name" placeholder="Full name" required></label><label>Date of Birth<input name="dob" type="date"></label><label>* District<select id="district" name="district" required><option value="">Select district</option></select></label><label>* Home Area / Sub-county<select id="home_area_select"><option value="">Select district first</option></select><input id="home_area_custom" placeholder="Type village/home area if missing"></label><label>* Club<input name="club" placeholder="Current club/team" required></label><label>* Category<select name="player_type" required><option value="">Select category</option><option>Home Boy (Enzaarwa)</option><option>Foreign Player (Outside Ankole)</option></select></label><label>* National ID Number (NIN)<input name="nin" id="nin" maxlength="14" minlength="14" pattern="[A-Z]{2}[A-Z0-9]{12}" placeholder="CM03061108ATZJ" required><small>Strict 14-character NIN format.</small></label><label>Phone Number<input name="phone" placeholder="07XXXXXXXX"></label></div><input type="hidden" name="home_area" id="home_area" required></section>
+    <section class="form-step" data-step="1"><h3>Section B: Eligibility and Player History</h3><label>Previous clubs<textarea name="previous_clubs" placeholder="List at least two clubs if applicable"></textarea></label><label>Eligibility as a Home Boy<textarea name="eligibility" placeholder="Village, sub-county, school, parentage or community details"></textarea></label></section>
+    <section class="form-step" data-step="2"><h3>Section C: Required Attachments</h3><div class="grid upload-grid"><label>* Player Photo<input type="file" name="photo" accept="image/*" required><small>Gallery or camera allowed.</small></label><label>* National ID Front Scan<input type="file" name="national_id_front_photo" accept="image/*" capture="environment" required><small>Use camera scan only where supported.</small></label><label>* National ID Back Scan<input type="file" name="national_id_back_photo" accept="image/*" capture="environment" required><small>Use camera scan only where supported.</small></label></div><div class="scan-warning">National ID images should be captured clearly using the camera for verification.</div></section>
+    <section class="form-step" data-step="3"><h3>Section D: Declaration</h3><div class="declaration">I declare that the information provided is correct to the best of my knowledge and I shall abide by all Ankole Cup 2026 directives, regulations and decisions.</div><div class="grid"><label>* Player Specimen Signature<input name="player_signature" required></label><label>District / Team Official Name<input name="official_name"></label><label>District / Team Official Signature<input name="official_signature"></label></div></section>
+    <div class="form-navigation"><button type="button" class="btn btn-outline" id="prevStep">Back</button><button type="button" class="btn" id="nextStep">Save and Continue</button><button type="submit" class="btn btn-gold" id="submitRegistration">Submit Registration</button></div>
   </form>
 </main>
 
-<footer class="official-footer">
-  <p>Plot 01, Kome Crescent Luzira, P.O Box 203327 Kampala | Tel: 0779 283 515 / 0703 158 864</p>
-  <p>Plot 01, Bananuka Drive, Wazalendo Sacco Building - Mbarara, 1st Floor - Office 1 | Tel: 0700 905 727</p>
-  <p>Email: ankolecup2026@gmail.com</p>
-</footer>
-
+<footer class="official-footer"><p>Plot 01, Kome Crescent Luzira, P.O Box 203327 Kampala | Tel: 0779 283 515 / 0703 158 864</p><p>Plot 01, Bananuka Drive, Wazalendo Sacco Building - Mbarara, 1st Floor - Office 1 | Tel: 0700 905 727</p><p>Email: ankolecup2026@gmail.com</p></footer>
 <script>
-let HOME_AREAS = {};
-let currentStep = 0;
-const steps = [...document.querySelectorAll('.form-step')];
-const indicators = [...document.querySelectorAll('[data-step-indicator]')];
-const prevBtn = document.getElementById('prevStep');
-const nextBtn = document.getElementById('nextStep');
-const submitBtn = document.getElementById('submitRegistration');
-
-fetch('/api/options').then(r => r.json()).then(data => {
-  HOME_AREAS = data.homeAreas;
-  const d = document.getElementById('district');
-  data.districts.forEach(x => d.add(new Option(x, x)));
-});
-
-fetch('/api/settings').then(r => r.json()).then(s => {
-  if (s.registration_deadline) {
-    document.getElementById('deadlineNotice').textContent = 'Registration deadline: ' + s.registration_deadline;
-  }
-});
-
-function syncHome(){
-  const select = document.getElementById('home_area_select');
-  const custom = document.getElementById('home_area_custom');
-  document.getElementById('home_area').value = custom.value.trim() || select.value;
-}
-
-function showStep(index){
-  currentStep = index;
-  steps.forEach((step, i) => step.classList.toggle('active', i === currentStep));
-  indicators.forEach((item, i) => {
-    item.classList.toggle('active', i === currentStep);
-    item.classList.toggle('done', i < currentStep);
-  });
-  prevBtn.style.display = currentStep === 0 ? 'none' : 'inline-flex';
-  nextBtn.style.display = currentStep === steps.length - 1 ? 'none' : 'inline-flex';
-  submitBtn.style.display = currentStep === steps.length - 1 ? 'inline-flex' : 'none';
-  document.getElementById('registrationForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function validateCurrentStep(){
-  syncHome();
-  const current = steps[currentStep];
-  const fields = [...current.querySelectorAll('input, select, textarea')];
-  for (const field of fields) {
-    if (!field.checkValidity()) {
-      field.reportValidity();
-      return false;
-    }
-  }
-  if (currentStep === 0) {
-    const nin = document.getElementById('nin').value.trim().toUpperCase();
-    if (!/^[A-Z]{2}[A-Z0-9]{12}$/.test(nin)) {
-      alert('Please enter a valid 14-character Uganda NIN format.');
-      return false;
-    }
-    if (!document.getElementById('home_area').value) {
-      alert('Please select or type the home area.');
-      return false;
-    }
-  }
-  return true;
-}
-
-document.getElementById('district').addEventListener('change', e => {
-  const areas = HOME_AREAS[e.target.value] || [];
-  const s = document.getElementById('home_area_select');
-  s.innerHTML = '<option value="">Select home area/sub-county</option>' + areas.map(a => `<option>${a}</option>`).join('');
-  document.getElementById('home_area_custom').value = '';
-  syncHome();
-});
-
-document.getElementById('home_area_select').addEventListener('change', syncHome);
-document.getElementById('home_area_custom').addEventListener('input', syncHome);
-document.getElementById('nin').addEventListener('input', e => { e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); });
-
-prevBtn.addEventListener('click', () => showStep(Math.max(0, currentStep - 1)));
-nextBtn.addEventListener('click', () => { if (validateCurrentStep()) showStep(Math.min(steps.length - 1, currentStep + 1)); });
-
-document.querySelector('form').addEventListener('submit', e => {
-  syncHome();
-  if (!validateCurrentStep()) {
-    e.preventDefault();
-    return;
-  }
-  submitBtn.textContent = 'Submitting Registration...';
-  submitBtn.disabled = true;
-});
-
-showStep(0);
+let HOME_AREAS={}, currentStep=0; const steps=[...document.querySelectorAll('.form-step')], indicators=[...document.querySelectorAll('[data-step-indicator]')], prevBtn=document.getElementById('prevStep'), nextBtn=document.getElementById('nextStep'), submitBtn=document.getElementById('submitRegistration');
+fetch('/api/options').then(r=>r.json()).then(data=>{HOME_AREAS=data.homeAreas; const d=document.getElementById('district'); data.districts.forEach(x=>d.add(new Option(x,x)));});
+fetch('/api/settings').then(r=>r.json()).then(s=>{if(s.registration_deadline){deadlineNotice.textContent='Registration deadline: '+s.registration_deadline; deadlineCard.textContent='Deadline: '+s.registration_deadline;}});
+function syncHome(){home_area.value=home_area_custom.value.trim()||home_area_select.value;}
+function showStep(i){currentStep=i; steps.forEach((s,n)=>s.classList.toggle('active',n===i)); indicators.forEach((el,n)=>{el.classList.toggle('active',n===i); el.classList.toggle('done',n<i)}); prevBtn.style.display=i===0?'none':'inline-flex'; nextBtn.style.display=i===steps.length-1?'none':'inline-flex'; submitBtn.style.display=i===steps.length-1?'inline-flex':'none'; registrationForm.scrollIntoView({behavior:'smooth',block:'start'});}
+function validateCurrentStep(){syncHome(); for(const f of steps[currentStep].querySelectorAll('input,select,textarea')){if(!f.checkValidity()){f.reportValidity();return false;}} if(currentStep===0){const nin=document.getElementById('nin').value.trim().toUpperCase(); if(!/^[A-Z]{2}[A-Z0-9]{12}$/.test(nin)){alert('Please enter a valid 14-character Uganda NIN format.');return false;} if(!home_area.value){alert('Please select or type the home area.');return false;}} return true;}
+district.addEventListener('change',e=>{home_area_select.innerHTML='<option value="">Select home area</option>'; (HOME_AREAS[e.target.value]||[]).forEach(a=>home_area_select.add(new Option(a,a))); syncHome();}); home_area_select.addEventListener('change',syncHome); home_area_custom.addEventListener('input',syncHome);
+prevBtn.addEventListener('click',()=>showStep(Math.max(0,currentStep-1))); nextBtn.addEventListener('click',()=>{if(validateCurrentStep())showStep(Math.min(steps.length-1,currentStep+1));}); document.querySelector('form').addEventListener('submit',e=>{syncHome(); if(!validateCurrentStep())e.preventDefault();}); showStep(0);
 </script>
-</body>
-</html>
+</body></html>
