@@ -1,37 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Submitted - Ankole Cup 2026</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="success-page">
-  <main class="success-wrap">
-    <section class="success-card">
-      <div class="success-mark">
-        <img src="ankole-logo.png" alt="Ankole Cup logo">
-      </div>
-      <span class="eyebrow">Submission Received</span>
-      <h1>Registration submitted successfully</h1>
-      <p class="success-text">The player registration has been received by the Ankole Cup 2026 Competitions Department and is now pending official review.</p>
-      <div class="reg-box">
-        <small>Registration Number</small>
-        <strong id="reg">AC2026-</strong>
-      </div>
-      <div class="approval-notice">
-        <strong>PDF access is controlled.</strong>
-        <span>The submitted form can only be downloaded from the Competition Portal after approval by the district officer or main admin.</span>
-      </div>
-      <div class="success-actions">
-        <a class="btn btn-gold" href="admin-login.html">Open Competition Portal</a>
-        <a class="btn btn-secondary" href="/">Register Another Player</a>
-      </div>
-    </section>
-  </main>
-  <script>
-    const r = new URLSearchParams(location.search).get('reg') || '';
-    document.getElementById('reg').textContent = r || 'Registration submitted';
-  </script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Registration Submitted</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="nav"><a class="brand-flat" href="/"><img src="ankole-logo.png" alt="Ankole Cup logo"><span>Ankole Cup 2026</span></a><nav><a href="/">Home</a><a href="admin-login.html">Competition Portal</a></nav></header>
+<main class="success-wrap"><section class="success-card"><img src="ankole-logo.png" alt="Ankole Cup logo"><span class="tag">Submission received</span><h1>Registration submitted successfully.</h1><p>Your registration has been received by the competitions department. The official PDF and player ID card will only be available after approval by the district officer or main admin.</p><div class="success-ref"><small>Registration Number</small><strong id="regNo">Pending</strong></div><div class="hero-actions"><a class="btn btn-gold" href="/">Register Another Player</a><a class="btn btn-outline" href="admin-login.html">Open Competition Portal</a></div></section></main>
+<footer class="official-footer"><p>Plot 01, Kome Crescent Luzira, P.O Box 203327 Kampala | Tel: 0779 283 515 / 0703 158 864</p><p>Email: ankolecup2026@gmail.com</p></footer>
+<script>const reg=new URLSearchParams(location.search).get('reg'); if(reg) document.getElementById('regNo').textContent=reg;</script></body></html>
